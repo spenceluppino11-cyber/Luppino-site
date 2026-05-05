@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUPPINO - Building with Intent</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+          font-family: 'Material Symbols Outlined';
+          font-weight: normal;
+          font-style: normal;
+          font-size: 24px;
+          line-height: 1;
+          letter-spacing: normal;
+          text-transform: none;
+          display: inline-block;
+          white-space: nowrap;
+          word-wrap: normal;
+          direction: ltr;
+          -webkit-font-feature-settings: 'liga';
+          -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#2f3131",
+                      "surface-container-low": "#f3f3f3",
+                      "error-container": "#ffdad6",
+                      "primary": "#000000",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "on-surface": "#1a1c1c",
+                      "surface-container": "#eeeeee",
+                      "outline-variant": "#cfc4c5",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#4c4546",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-secondary-fixed-variant": "#454747",
+                      "tertiary": "#000000",
+                      "on-primary-fixed": "#1b1b1b",
+                      "outline": "#7e7576",
+                      "inverse-primary": "#c6c6c6",
+                      "surface-tint": "#5e5e5e",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-secondary": "#ffffff",
+                      "background": "#f9f9f9",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "primary-container": "#1b1b1b",
+                      "on-primary-fixed-variant": "#474747",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-background": "#1a1c1c",
+                      "on-primary-container": "#848484",
+                      "surface-dim": "#dadada",
+                      "primary-fixed": "#e2e2e2",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-secondary-container": "#636465",
+                      "secondary-container": "#e2e2e2",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-container": "#848484",
+                      "secondary": "#5d5f5f",
+                      "surface": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "tertiary-container": "#1b1b1b",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-bright": "#f9f9f9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "content-margin": "48px",
+                      "section-gap": "160px",
+                      "asymmetric-offset": "8.33%",
+                      "rule-width": "1px"
+              },
+              "fontFamily": {
+                      "display-xl": [
+                              "Inter", "sans-serif"
+                      ],
+                      "headline-lg": [
+                              "Inter", "sans-serif"
+                      ],
+                      "body-md": [
+                              "Newsreader", "serif"
+                      ],
+                      "label-sm": [
+                              "Inter", "sans-serif"
+                      ]
+              },
+              "fontSize": {
+                      "display-xl": [
+                              "96px",
+                              {
+                                      "lineHeight": "0.9",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent flex justify-between items-center px-10 py-8">
+<img alt="LUPPINO Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugMwZkSjZcJ3AekdXMWdQ_KY2SUarDjAyN2tKpaNPWZLx4VHCvU7vu-EzeXpom8IoUC-FsnecyTg6DZLiIkVU5j7sXs3MW125DVNgWDK9tSodxQhO6RfGLKZkmCHyzST4VOPVWWjcXn9J8CNclpTWdc7FC_iYDkoEdmdQaQvzNFaDoMIcHO0msRQMwSM7c7RVoNcF8pkImcFEiFyEsIrzzjGfPm3u9AMkPw60eOSdshWggEFSaPfDF18IOvAwtzjqtuhkgf920D"/>
+<ul class="flex gap-8 items-center">
+<li>
+<a class="font-inter tracking-widest uppercase text-[11px] font-semibold text-slate-900 border-b border-slate-900 pb-1 opacity-90 hover:opacity-100 transition-opacity" href="#">Projects</a>
+</li>
+<li>
+<a class="font-inter tracking-widest uppercase text-[11px] font-semibold text-slate-400 pb-1 hover:text-slate-900 transition-colors duration-300 opacity-90 hover:opacity-100 transition-opacity" href="#">Process</a>
+</li>
+<li>
+<a class="font-inter tracking-widest uppercase text-[11px] font-semibold text-slate-400 pb-1 hover:text-slate-900 transition-colors duration-300 opacity-90 hover:opacity-100 transition-opacity" href="#">Research</a>
+</li>
+<li>
+<a class="font-inter tracking-widest uppercase text-[11px] font-semibold text-slate-400 pb-1 hover:text-slate-900 transition-colors duration-300 opacity-90 hover:opacity-100 transition-opacity" href="#">Contact</a>
+</li>
+</ul>
+</nav>
+<main class="flex-grow pt-40">
+<!-- Hero Section -->
+<section class="px-content-margin pb-section-gap relative">
+<div class="relative w-full h-[80vh] min-h-[600px] bg-surface-variant group overflow-hidden">
+<img alt="Architectural exterior" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.65] group-hover:scale-105 transition-transform duration-[1.5s] ease-out" data-alt="A striking architectural photograph capturing the vibrant, minimalist exterior of a modern glass and steel building. The composition utilizes a wide aspect ratio, emphasizing the building's geometric forms set against a clear blue sky. Warm, natural sunlight reflects off the surfaces, highlighting the interplay of light and texture in high-quality color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDtrjN_qCnsesIGNQXrtretjmFo0SijRJ3b570rUWghgereRkIVqghEpyYTb_hn6GzxQ0sDgyICcvyW3R_tT05RBYRVX1hds3s-VCtE05Tr3tRsg4Mj2pSaUH7JqBwOprQXex3BAPafETrsgMQO2txR5OQFVujgEhZSRv2H_L24YZygxXeSliTgMiChOIdTKb4UhXZEP6UaACFGD26rleo9734981e5HhNVUxlk3mN_ctMAJ6Xyk2KCpwKDLx7Fxvb8vU7_dl88w"/>
+<div class="absolute inset-0 flex flex-col justify-center items-center z-10 p-8 text-center pointer-events-none">
+<img alt="LUPPINO" class="w-[50vw] max-w-4xl h-auto invert brightness-0" src="https://lh3.googleusercontent.com/aida/ADBb0ugMwZkSjZcJ3AekdXMWdQ_KY2SUarDjAyN2tKpaNPWZLx4VHCvU7vu-EzeXpom8IoUC-FsnecyTg6DZLiIkVU5j7sXs3MW125DVNgWDK9tSodxQhO6RfGLKZkmCHyzST4VOPVWWjcXn9J8CNclpTWdc7FC_iYDkoEdmdQaQvzNFaDoMIcHO0msRQMwSM7c7RVoNcF8pkImcFEiFyEsIrzzjGfPm3u9AMkPw60eOSdshWggEFSaPfDF18IOvAwtzjqtuhkgf920D"/>
+<h2 class="font-headline-lg text-xl md:text-3xl text-white/90 mt-8 font-medium tracking-[0.2em] uppercase drop-shadow-md">
+Building with Intent
+</h2>
+</div>
+</div>
+<div class="mt-6 flex justify-between items-start border-t border-surface-variant pt-4 w-full md:w-1/3">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest">Fig 01.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase text-right">Brutalist Form Study, 2024</span>
+</div>
+</section>
+<!-- Mission Section -->
+<section class="px-content-margin py-section-gap border-t border-surface-variant relative">
+<div class="grid grid-cols-12 gap-12">
+<div class="col-span-5 relative">
+<h2 class="font-headline-lg text-headline-lg text-primary sticky top-40">
+                        More than a building
+                    </h2>
+</div>
+<div class="col-span-6 col-start-7 border-l border-surface-variant pl-12">
+<div class="columns-1 md:columns-2 gap-12 font-body-md text-body-md text-on-surface-variant space-y-8">
+<p>
+                            We approach architecture as a physical manifestation of thought. Every structure is a rigorous inquiry into the relationship between mass, void, and human experience. The discipline demands an absolute rejection of the superfluous.
+                        </p>
+<p>
+                            Our process is anchored in restraint. By limiting our material palette and focusing intensely on proportion and light, we construct spaces that possess a quiet, enduring authority. It is not merely construction; it is the deliberate shaping of silence.
+                        </p>
+<p>
+                            The spaces we inhabit shape the internal dialogue of those within them. Therefore, our intent is always precision. We design environments that command attention through their austerity, serving as stoic backgrounds for the complexities of modern life.
+                        </p>
+<p>
+                            This ideology extends from the sweeping urban gesture down to the 1-millimeter reveal. Consistency across all scales is the hallmark of structural integrity. Here, the detail is not an ornament; it is the building itself.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects Section -->
+<section class="px-content-margin py-section-gap border-t border-surface-variant">
+<div class="flex items-center gap-4 mb-32">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Index</span>
+<div class="h-rule-width bg-surface-variant flex-grow"></div>
+</div>
+<!-- Project 01 : Left Aligned -->
+<div class="grid grid-cols-12 gap-8 mb-48 items-end">
+<div class="col-span-8 relative">
+<img alt="Interior study" class="w-full h-[819px] object-cover" data-alt="A highly curated interior architectural shot in color, focusing on a minimalist staircase. Warm wood tones and soft ambient lighting create a welcoming yet structured environment, emphasizing modern materials and clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI-IV4cK5gBGTBwSO7YyaWnRHklhouSWbvm_N8aqaNJtzzUclExmVPVH_dgnc7S20tTjMt5VClwbB2z2JecFWMjEmsO2tIbRmFR8mpBu_QsGotecMzA-Gwns8CsvZBWgZb8pr2RrS4d8UdNC18cnUSgOx_lAN2-CuXMmoSAmew3jDVC9co85SZXIIqtXdeLUYWiZMSiNROE9UItrdo0ujJUjXbzancj-3gmb9Nq9pJYXrrXKFcBcuSKDN2raNJ5WbQbGDgF6XetQ"/>
+</div>
+<div class="col-span-3 col-start-10 border-l border-primary pl-6 pb-2">
+<h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Project 01 / The Ascendant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm italic">Oslo, Norway</p>
+</div>
+</div>
+<!-- Project 02 : Right Aligned -->
+<div class="grid grid-cols-12 gap-8 items-end">
+<div class="col-span-3 border-r border-primary pr-6 pb-2 text-right">
+<h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Project 02 / Subterranean</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm italic">Kyoto, Japan</p>
+</div>
+<div class="col-span-8 col-start-5 relative">
+<img alt="Gallery space" class="w-full h-[614px] object-cover" data-alt="An expansive, modern gallery interior defined by warm lighting and polished floors. The perspective leads the eye down a corridor where art and architecture meet in a rich, colorful, and intellectual atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlexqzeeO5oHVdBn3kgJgsu4IB95dN3TCU7drbnzUoASj8B40fvkY7EzHe7zJofRXtVm1LRUp8pMbGcvDzGiM5FC09nI5PJsJ1NcHJw4LFuEkr54TBYjBYEZWDklJCpOAlUKENaFZCgKoCKqJocSTgR7WPizDwicZdbO3z01MA-bsDUsd9pzcNnhKoPelOJsmB2GZ-Hh_hNE426vU7tfhmAJ_iBJLAOfk2ALVjMa8diEZWmjx0wKHnCzzaafOAHNYSaItbRwMXhA"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 border-t border-slate-200 bg-white grid grid-cols-1 md:grid-cols-3 gap-12 px-10 max-w-full transition-all duration-500 ease-in-out">
+<div>
+<span class="font-inter text-[10px] uppercase tracking-[0.15em] font-medium text-slate-500">© 2024 LUPPINO</span>
+</div>
+<div class="md:col-span-2 flex justify-end gap-12">
+<a class="font-inter text-[10px] uppercase tracking-[0.15em] font-medium text-slate-500 hover:text-slate-900 underline underline-offset-4 transition-all duration-500 ease-in-out" href="#">Instagram</a>
+<a class="font-inter text-[10px] uppercase tracking-[0.15em] font-medium text-slate-500 hover:text-slate-900 underline underline-offset-4 transition-all duration-500 ease-in-out" href="#">Email</a>
+<a class="font-inter text-[10px] uppercase tracking-[0.15em] font-medium text-slate-500 hover:text-slate-900 underline underline-offset-4 transition-all duration-500 ease-in-out" href="#">Privacy</a>
+<a class="font-inter text-[10px] uppercase tracking-[0.15em] font-medium text-slate-500 hover:text-slate-900 underline underline-offset-4 transition-all duration-500 ease-in-out" href="#">Terms</a>
+</div>
+</footer>
+</body></html>

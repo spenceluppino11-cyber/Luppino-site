@@ -1,0 +1,5 @@
+.DS_Store
+*.log
+
+# Original raw photography (12–19 MB each) — optimized copies live in site/images/
+Luppino Built-*.jpg
