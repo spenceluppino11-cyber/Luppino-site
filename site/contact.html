@@ -31,7 +31,7 @@
           <h1 class="display-xl contact-hero__title">Get<br />in touch</h1>
         </div>
         <div class="col-4 start-9" style="align-self: end;">
-          <p class="body-md contact-hero__intro">New projects, press requests, and studio visits are handled directly by our practice. We respond to every enquiry within five working days.</p>
+          <p class="body-md contact-hero__intro">New project enquiries are handled directly by our team. We respond to every enquiry within five working days.</p>
         </div>
       </div>
     </header>
@@ -59,7 +59,14 @@
     <section class="contact-form-section">
       <h2 class="headline-md contact-form-section__title">Begin a project<br />with us.</h2>
 
-      <form class="form" autocomplete="on">
+      <!-- Success banner (hidden until JS sets .is-shown after a successful submit) -->
+      <div class="form__success" id="contact-success" hidden>
+        <p class="label-sm">Enquiry sent.</p>
+        <p class="body-md">Thanks for reaching out — we'll be in touch within five working days.</p>
+      </div>
+      <div class="form__error" id="contact-error" hidden></div>
+
+      <form class="form" id="contact-form" action="https://formspree.io/f/maqvjkeg" method="POST" autocomplete="on">
         <div class="form__field">
           <label class="form__label" for="name">Full name</label>
           <input class="form__input" id="name" name="name" type="text" required />
@@ -98,6 +105,50 @@
       <a href="#">Terms</a>
     </div>
   </footer>
+
+  <!-- Contact form: submits to Formspree via fetch, shows inline success/error -->
+  <script>
+    (function () {
+      const form = document.getElementById('contact-form');
+      const success = document.getElementById('contact-success');
+      const errorBox = document.getElementById('contact-error');
+      if (!form) return;
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(form),
+          });
+
+          if (response.ok) {
+            form.reset();
+            form.hidden = true;
+            success.hidden = false;
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            const data = await response.json().catch(() => ({}));
+            const message = (data.errors && data.errors.map((e) => e.message).join(', '))
+              || 'Something went wrong. Please try again or email us directly.';
+            errorBox.textContent = message;
+            errorBox.hidden = false;
+          }
+        } catch (err) {
+          errorBox.textContent = 'Network error — please try again, or email joe@luppinobuilt.com.au directly.';
+          errorBox.hidden = false;
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>

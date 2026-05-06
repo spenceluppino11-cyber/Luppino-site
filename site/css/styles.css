@@ -139,7 +139,7 @@ main { flex: 1 0 auto; }
   background: transparent;
 }
 .nav__logo {
-  height: 22px;
+  height: 38px;
   width: auto;
   display: block;
   filter: invert(1);
@@ -265,7 +265,8 @@ main { flex: 1 0 auto; }
   width: 50vw;
   max-width: 720px;
   height: auto;
-  filter: invert(1) brightness(2);
+  /* Logo file is already white on transparent — no filter needed. */
+  filter: drop-shadow(0 2px 16px rgba(0, 0, 0, 0.35));
 }
 .hero__tagline {
   margin-top: 32px;
@@ -308,6 +309,17 @@ main { flex: 1 0 auto; }
   color: var(--on-surface-variant);
 }
 .mission__copy-cols p { break-inside: avoid; margin-bottom: 24px; }
+
+.mission__statement {
+  font-size: 22px;
+  line-height: 1.55;
+  color: var(--on-surface);
+  max-width: 580px;
+}
+
+@media (max-width: 800px) {
+  .mission__statement { font-size: 18px; }
+}
 
 /* ---------- Featured projects (homepage) ---------- */
 .featured {
@@ -665,6 +677,34 @@ main { flex: 1 0 auto; }
   color: var(--secondary);
 }
 
+/* Inline form banners. Stay hidden until JS removes the `hidden` attribute
+   after a successful submit (success) or a server error (error). */
+.form__success,
+.form__error {
+  margin-bottom: 48px;
+  padding: 32px 40px;
+  background: #ffffff;
+  border-top: var(--rule) solid var(--primary);
+  border-bottom: var(--rule) solid var(--primary);
+}
+.form__error {
+  border-color: var(--error, #ba1a1a);
+  color: var(--error, #ba1a1a);
+}
+.form__success .label-sm {
+  color: var(--secondary);
+  margin-bottom: 12px;
+  display: block;
+}
+.form__success .body-md { color: var(--primary); }
+
+/* Disabled submit while the form is in flight */
+.button[disabled] {
+  opacity: 0.5;
+  cursor: progress;
+  pointer-events: none;
+}
+
 /* =========================================================
    Motion — emulating the slow, editorial feel of high-end
    architectural sites. All transforms run on cheap properties
@@ -894,6 +934,7 @@ body.has-intro .hero__caption { opacity: 0; }
   .nav { padding: 20px var(--content-margin); }
   .nav__list { gap: 20px; }
   .nav__link { font-size: 10px; letter-spacing: 0.15em; }
+  .nav__logo { height: 26px; }
 
   /* Collapse 12-col grids on mobile */
   .grid-12 > [class*="col-"] { grid-column: 1 / -1; }
