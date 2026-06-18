@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUPPINO — Sara St, Pt Lonsdale (Now Building)</title>
+  <meta name="description" content="Sara Street, Point Lonsdale — a weatherboard home currently at lock-up by LUPPINO." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/motion.js"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html"><img class="nav__logo" src="images/logo.png" alt="LUPPINO" /></a>
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Home</a></li>
+      <li><a class="nav__link" href="projects.html">Projects</a></li>
+      <li><a class="nav__link is-active" href="now-building.html">Now Building</a></li>
+      <li><a class="nav__link" href="about.html">About</a></li>
+      <li><a class="nav__link" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Page header -->
+    <header class="page-header">
+      <div class="grid-12 page-header__grid">
+        <div class="col-7 page-header__lede">
+          <span class="label-sm page-header__eyebrow">Now Building · Lock-Up</span>
+          <h1 class="display-xl page-header__title">Sara St,<br />Pt Lonsdale</h1>
+        </div>
+        <div class="col-4 start-9 page-header__aside">
+          <p class="body-md page-header__intro">A weatherboard home currently at lock-up — frame closed in, cladding and windows taking their final form.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Project showcase (lighter than completed builds) -->
+    <section class="project-showcase">
+
+      <!-- Hero — front facade in sisalation -->
+      <div class="project-showcase__hero">
+        <img src="images/sara-hero.jpg" alt="Sara St, Pt Lonsdale — front facade at lock-up stage" />
+      </div>
+
+      <!-- Meta strip — just Location & Status for in-progress builds -->
+      <div class="project-showcase__meta">
+        <div class="col-6 project-showcase__meta-item">
+          <h4 class="label-sm">Location</h4>
+          <p>Point Lonsdale</p>
+        </div>
+        <div class="col-6 project-showcase__meta-item">
+          <h4 class="label-sm">Status</h4>
+          <p>Lock-up · Cladding and windows underway</p>
+        </div>
+      </div>
+
+      <!-- Gallery — 4 in-progress photos -->
+      <div class="gallery">
+
+        <!-- Fig 01 — interior with windows (full bleed) -->
+        <figure class="col-12">
+          <div class="gallery__image-wrap ratio-3x2">
+            <img src="images/sara-windows.jpg" alt="Sara St — interior, windows set into the frame" />
+          </div>
+          <figcaption class="gallery__caption label-sm">
+            <span>Fig 01.</span>
+            <span>Living, Windows Set</span>
+          </figcaption>
+        </figure>
+
+        <!-- Fig 02 + 03 — paired: facade + hallway -->
+        <figure class="col-7">
+          <div class="gallery__image-wrap ratio-4x5">
+            <img src="images/sara-facade.jpg" alt="Sara St — facade, existing wing and new gable joined by a breezeway" />
+          </div>
+          <figcaption class="gallery__caption label-sm">
+            <span>Fig 02.</span>
+            <span>Facade, Old &amp; New</span>
+          </figcaption>
+        </figure>
+
+        <figure class="col-4 start-9">
+          <div class="gallery__image-wrap ratio-3x4">
+            <img src="images/sara-hallway.jpg" alt="Sara St — hallway through the frame" />
+          </div>
+          <figcaption class="gallery__caption label-sm">
+            <span>Fig 03.</span>
+            <span>Hallway, Framed</span>
+          </figcaption>
+        </figure>
+
+        <!-- Fig 04 — craft (portrait, centered) -->
+        <figure class="col-5 start-4">
+          <div class="gallery__image-wrap ratio-4x5">
+            <img src="images/sara-craft.jpg" alt="Sara St — carpenter setting wall cladding" />
+          </div>
+          <figcaption class="gallery__caption label-sm">
+            <span>Fig 04.</span>
+            <span>Cladding, In Hand</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <!-- Closing block -->
+      <div style="border-top: 1px solid var(--surface-variant); padding-top: 48px; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+        <span class="label-sm">More Work Underway</span>
+        <a class="button" href="contact.html">Begin a Project</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer__copyright">© 2026 LUPPINO</span>
+    <div class="footer__links">
+      <a href="#">Instagram</a>
+      <a href="contact.html">Email</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </footer>
+
+</body>
+</html>
